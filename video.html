@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: rgb(24,24,24);
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <iframe width="1000" height="600" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+</body>
+</html>
+<script>
+    let videodetails=JSON.parse(localStorage.getItem("video")) ;
+    console.log(videodetails,videodetails.id)
+    if (videodetails.id.videoId==undefined){
+        let id= videodetails.id;
+    let iframe=document.querySelector("iframe");
+    iframe.src= `https://www.youtube.com/embed/${id}`
+   
+    }
+   else{
+        let id= videodetails.id.videoId;
+    let iframe=document.querySelector("iframe");
+    iframe.src= `https://www.youtube.com/embed/${id}`
+   
+    }
+    
+</script>
